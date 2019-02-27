@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Hangfire.SimpleInjector.Tests
 {
@@ -6,6 +6,7 @@ namespace Hangfire.SimpleInjector.Tests
 
     using SimpleInjector;
     using System;
+
     [TestClass]
     public class SimpleInjectorJobActivatorTests
     {
@@ -20,6 +21,7 @@ namespace Hangfire.SimpleInjector.Tests
         {
             container = new Container();
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CtorThrowsAnExceptionWhenContainerIsNull()
@@ -27,6 +29,7 @@ namespace Hangfire.SimpleInjector.Tests
             // ReSharper disable once UnusedVariable
             var activator = new SimpleInjectorJobActivator(null);
         }
+
         [TestMethod]
         public void ActivateJobCallsSimpleInjector()
         {
